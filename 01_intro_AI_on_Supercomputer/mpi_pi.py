@@ -28,7 +28,7 @@ import random
 import time
 comm = MPI.COMM_WORLD
 
-N = 500
+N = 5000000
 Nin = 0
 t0 = time.time()
 for i in range(comm.rank, N, comm.size):
