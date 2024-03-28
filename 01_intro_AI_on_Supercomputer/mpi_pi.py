@@ -5,8 +5,6 @@ import time
 comm = MPI.COMM_WORLD
 
 N = 5000000
-if comm.rank == 0:
-    print("Total number of points (N):", N)
 Nin = 0
 t0 = time.time()
 for i in range(comm.rank, N, comm.size):
@@ -21,3 +19,4 @@ t1 = time.time()
 if comm.rank==0:
     print(res_tot/float(N/4.0))
     print("Time: %s" %(t1 - t0))
+    print("Total number of points (N):", N)
